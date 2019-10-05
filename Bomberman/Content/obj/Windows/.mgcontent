@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>Reach</Profile>
+  <Platform>Windows</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/block.png</File>
+    <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/Bomber_1.jpg</File>
+    <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/Bomberman2Sheet1.gif</File>
+    <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/map.png</File>
+  </SourceFiles>
+  <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+  </DestFiles>
+</SourceFileCollection>
