@@ -62,7 +62,12 @@ namespace Bomberman.Entities
                 xPosition += mapKeys[key];
             }
 
-            currentFrame = new Rectangle(xPosition, yPosition, currentFrame.Width, currentFrame.Height);
+            Rectangle newPosc = new Rectangle(xPosition, yPosition, currentFrame.Width, currentFrame.Height);
+
+            if (!Background.getInstance().intersectBlocks(newPosc))
+            {
+                currentFrame = newPosc;
+            }
         }
     }
 }

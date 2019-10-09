@@ -38,5 +38,9 @@ namespace Bomberman.Entities
         }
 
         public abstract void Update(GameTime gameTime);
+
+        public Boolean intersect(Rectangle sprite) {
+            return this.currentFrame.Intersects(sprite);
+        }
     }
 }
