@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Entities\Background.cs" />
     <Compile Include="Entities\Block.cs" />
+    <Compile Include="Entities\Bomb.cs" />
     <Compile Include="Entities\BombermanEntity.cs" />
     <Compile Include="Entities\BombermanPlayerOne.cs" />
     <Compile Include="Entities\ISprite.cs" />
@@ -59,10 +60,37 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Shared\Images\block.png" />
-    <Content Include="Content\Shared\Images\Bomberman2Sheet1.gif" />
-    <Content Include="Content\Shared\Images\Bomber_1.jpg" />
+    <Content Include="Content\Shared\Images\bomb.jpg" />
+    <Content Include="Content\Shared\Images\Bomberman\Down\1.png" />
+    <Content Include="Content\Shared\Images\Bomberman\Down\2.png" />
+    <Content Include="Content\Shared\Images\Bomberman\Down\3.png" />
+    <Content Include="Content\Shared\Images\Bomberman\Down\4.png" />
+    <Content Include="Content\Shared\Images\Bomberman\Down\5.png" />
+    <Content Include="Content\Shared\Images\Bomberman\Down\6.png" />
+    <Content Include="Content\Shared\Images\Bomberman\Down\7.png" />
+    <Content Include="Content\Shared\Images\Bomberman\Left\22.png" />
+    <Content Include="Content\Shared\Images\Bomberman\Left\23.png" />
+    <Content Include="Content\Shared\Images\Bomberman\Left\24.png" />
+    <Content Include="Content\Shared\Images\Bomberman\Left\25.png" />
+    <Content Include="Content\Shared\Images\Bomberman\Left\26.png" />
+    <Content Include="Content\Shared\Images\Bomberman\Left\27.png" />
+    <Content Include="Content\Shared\Images\Bomberman\Left\28.png" />
+    <Content Include="Content\Shared\Images\Bomberman\Right\1.png" />
+    <Content Include="Content\Shared\Images\Bomberman\Right\2.png" />
+    <Content Include="Content\Shared\Images\Bomberman\Right\3.png" />
+    <Content Include="Content\Shared\Images\Bomberman\Right\4.png" />
+    <Content Include="Content\Shared\Images\Bomberman\Right\5.png" />
+    <Content Include="Content\Shared\Images\Bomberman\Right\6.png" />
+    <Content Include="Content\Shared\Images\Bomberman\Right\7.png" />
+    <Content Include="Content\Shared\Images\Bomberman\Up\1.png" />
+    <Content Include="Content\Shared\Images\Bomberman\Up\2.png" />
+    <Content Include="Content\Shared\Images\Bomberman\Up\3.png" />
+    <Content Include="Content\Shared\Images\Bomberman\Up\4.png" />
+    <Content Include="Content\Shared\Images\Bomberman\Up\5.png" />
+    <Content Include="Content\Shared\Images\Bomberman\Up\6.png" />
+    <Content Include="Content\Shared\Images\Bomberman\Up\7.png" />
     <Content Include="Content\Shared\Images\map.png" />
+    <Content Include="Content\Shared\Images\transparente.png" />
     <Content Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>

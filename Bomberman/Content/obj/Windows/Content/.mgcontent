@@ -4,12 +4,66 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/block.png</File>
-    <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/Bomber_1.jpg</File>
-    <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/Bomberman2Sheet1.gif</File>
+    <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/bomb.jpg</File>
+    <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/Bomberman/Down/1.png</File>
+    <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/Bomberman/Down/2.png</File>
+    <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/Bomberman/Down/3.png</File>
+    <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/Bomberman/Down/4.png</File>
+    <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/Bomberman/Down/5.png</File>
+    <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/Bomberman/Down/6.png</File>
+    <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/Bomberman/Down/7.png</File>
+    <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/Bomberman/Left/1.png</File>
+    <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/Bomberman/Left/2.png</File>
+    <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/Bomberman/Left/3.png</File>
+    <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/Bomberman/Left/4.png</File>
+    <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/Bomberman/Left/5.png</File>
+    <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/Bomberman/Left/6.png</File>
+    <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/Bomberman/Left/7.png</File>
+    <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/Bomberman/Right/1.png</File>
+    <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/Bomberman/Right/2.png</File>
+    <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/Bomberman/Right/3.png</File>
+    <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/Bomberman/Right/4.png</File>
+    <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/Bomberman/Right/5.png</File>
+    <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/Bomberman/Right/6.png</File>
+    <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/Bomberman/Right/7.png</File>
+    <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/Bomberman/Up/1.png</File>
+    <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/Bomberman/Up/2.png</File>
+    <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/Bomberman/Up/3.png</File>
+    <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/Bomberman/Up/4.png</File>
+    <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/Bomberman/Up/5.png</File>
+    <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/Bomberman/Up/6.png</File>
+    <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/Bomberman/Up/7.png</File>
     <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/map.png</File>
+    <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/transparente.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

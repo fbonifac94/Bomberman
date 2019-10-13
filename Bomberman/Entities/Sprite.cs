@@ -11,25 +11,14 @@ namespace Bomberman.Entities
     public abstract class Sprite: ISprite
     {
         protected Texture2D image { get; set; }
-        // protected Dictionary<int, Rectangle> frames { get; set; }
-        // protected int poscCurrentFrame { get; set; }
         protected Rectangle currentFrame { get; set; }
 
         public Sprite() { }
         
-        public Sprite(String imagePath, Rectangle currentFrame /* List<Rectangle> listframes */)
+        public Sprite(String imagePath, Rectangle currentFrame)
         {
-            // this.poscCurrentFrame = 0;
             this.image = BombermanGame.getInstance().Content.Load<Texture2D>(imagePath);
-            // frames = new Dictionary<int, Rectangle>();
-            /* int index = 0;
-            foreach (Rectangle frame in listframes)
-            {
-                frames.Add(index, frame);
-                index++;
-            }
-            index = 0; */
-            this.currentFrame = currentFrame;//frames[poscCurrentFrame];
+            this.currentFrame = currentFrame;
         }
 
         public virtual void Draw(GameTime gameTime)

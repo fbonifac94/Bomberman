@@ -7,9 +7,9 @@ using Microsoft.Xna.Framework;
 
 namespace Bomberman.Entities
 {
-    class Block : Sprite
+    class InvisibleBlock : Sprite
     {
-        public Block(Rectangle frames) : base("Shared/Images/block", frames) { }
+        public InvisibleBlock(Rectangle frames) : base("Shared/Images/transparente", frames) { }
 
         public override void Update(GameTime gameTime)
         {

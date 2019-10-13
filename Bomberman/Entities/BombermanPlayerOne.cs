@@ -10,9 +10,8 @@ namespace Bomberman.Entities
     class BombermanPlayerOne : BombermanEntity
     {
         private static BombermanPlayerOne bomberManPlayerOne;
-        // private static List<Rectangle> framesPlayerOne;
 
-        private BombermanPlayerOne(/*List<Rectangle> frames*/ Rectangle frames): base(frames)
+        private BombermanPlayerOne(Rectangle frames): base(frames)
         {
         }
 
@@ -20,9 +19,7 @@ namespace Bomberman.Entities
         {
             if (bomberManPlayerOne == null)
             {
-             //   framesPlayerOne = new List<Rectangle>();
-             //   framesPlayerOne.Add(new Rectangle(0, 0, 50, 50));
-                BombermanPlayerOne.bomberManPlayerOne = new BombermanPlayerOne(new Rectangle(85, 65, 40, 30) /* BombermanPlayerOne.framesPlayerOne */);
+                BombermanPlayerOne.bomberManPlayerOne = new BombermanPlayerOne(new Rectangle(85, 65, 40, 40) /* BombermanPlayerOne.framesPlayerOne */);
             }
             return BombermanPlayerOne.bomberManPlayerOne;
         }

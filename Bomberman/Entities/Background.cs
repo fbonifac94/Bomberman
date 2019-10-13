@@ -11,7 +11,7 @@ namespace Bomberman.Entities
     class Background : Sprite
     {
         private static Background background;
-        private static List<Block> listBlocks;
+        private static List<InvisibleBlock> listBlocks;
         private static Keys key;
         // private static List<Rectangle> framesBackground;
 
@@ -41,36 +41,36 @@ namespace Bomberman.Entities
         public override void Draw(GameTime gameTime)
         {
                 base.Draw(gameTime);
-                listBlocks = new List<Block>();
-                listBlocks.Add(new Block(new Rectangle(20, 20, 750, 40)));
-                listBlocks.Add(new Block(new Rectangle(20, 420, 750, 40)));
-                listBlocks.Add(new Block(new Rectangle(20, 62, 60, 358)));
-                listBlocks.Add(new Block(new Rectangle(710, 62, 60, 358)));
+                listBlocks = new List<InvisibleBlock>();
+                listBlocks.Add(new InvisibleBlock(new Rectangle(20, 20, 750, 40)));
+                listBlocks.Add(new InvisibleBlock(new Rectangle(20, 420, 750, 40)));
+                listBlocks.Add(new InvisibleBlock(new Rectangle(20, 62, 60, 358)));
+                listBlocks.Add(new InvisibleBlock(new Rectangle(710, 62, 60, 358)));
 
-                listBlocks.Add(new Block(new Rectangle(139, 102, 52, 36)));
-                listBlocks.Add(new Block(new Rectangle(256, 102, 52, 36)));
-                listBlocks.Add(new Block(new Rectangle(369, 102, 52, 36)));
-                listBlocks.Add(new Block(new Rectangle(487, 102, 52, 36)));
-                listBlocks.Add(new Block(new Rectangle(601, 102, 52, 36)));
+                listBlocks.Add(new InvisibleBlock(new Rectangle(139, 102, 52, 36)));
+                listBlocks.Add(new InvisibleBlock(new Rectangle(256, 102, 52, 36)));
+                listBlocks.Add(new InvisibleBlock(new Rectangle(369, 102, 52, 36)));
+                listBlocks.Add(new InvisibleBlock(new Rectangle(487, 102, 52, 36)));
+                listBlocks.Add(new InvisibleBlock(new Rectangle(601, 102, 52, 36)));
 
-                listBlocks.Add(new Block(new Rectangle(139, 181, 52, 36)));
-                listBlocks.Add(new Block(new Rectangle(256, 181, 52, 36)));
-                listBlocks.Add(new Block(new Rectangle(369, 181, 52, 36)));
-                listBlocks.Add(new Block(new Rectangle(487, 181, 52, 36)));
-                listBlocks.Add(new Block(new Rectangle(601, 181, 52, 36)));
+                listBlocks.Add(new InvisibleBlock(new Rectangle(139, 181, 52, 36)));
+                listBlocks.Add(new InvisibleBlock(new Rectangle(256, 181, 52, 36)));
+                listBlocks.Add(new InvisibleBlock(new Rectangle(369, 181, 52, 36)));
+                listBlocks.Add(new InvisibleBlock(new Rectangle(487, 181, 52, 36)));
+                listBlocks.Add(new InvisibleBlock(new Rectangle(601, 181, 52, 36)));
 
-                listBlocks.Add(new Block(new Rectangle(139, 260, 52, 36)));
-                listBlocks.Add(new Block(new Rectangle(256, 260, 52, 36)));
-                listBlocks.Add(new Block(new Rectangle(369, 260, 52, 36)));
-                listBlocks.Add(new Block(new Rectangle(487, 260, 52, 36)));
-                listBlocks.Add(new Block(new Rectangle(601, 260, 52, 36)));
+                listBlocks.Add(new InvisibleBlock(new Rectangle(139, 260, 52, 36)));
+                listBlocks.Add(new InvisibleBlock(new Rectangle(256, 260, 52, 36)));
+                listBlocks.Add(new InvisibleBlock(new Rectangle(369, 260, 52, 36)));
+                listBlocks.Add(new InvisibleBlock(new Rectangle(487, 260, 52, 36)));
+                listBlocks.Add(new InvisibleBlock(new Rectangle(601, 260, 52, 36)));
 
-                listBlocks.Add(new Block(new Rectangle(139, 339, 52, 36)));
-                listBlocks.Add(new Block(new Rectangle(256, 339, 52, 36)));
-                listBlocks.Add(new Block(new Rectangle(369, 339, 52, 36)));
-                listBlocks.Add(new Block(new Rectangle(487, 339, 52, 36)));
-                listBlocks.Add(new Block(new Rectangle(601, 339, 52, 36)));
-                foreach (Block block in listBlocks)
+                listBlocks.Add(new InvisibleBlock(new Rectangle(139, 339, 52, 36)));
+                listBlocks.Add(new InvisibleBlock(new Rectangle(256, 339, 52, 36)));
+                listBlocks.Add(new InvisibleBlock(new Rectangle(369, 339, 52, 36)));
+                listBlocks.Add(new InvisibleBlock(new Rectangle(487, 339, 52, 36)));
+                listBlocks.Add(new InvisibleBlock(new Rectangle(601, 339, 52, 36)));
+                foreach (InvisibleBlock block in listBlocks)
                 {
                     block.Draw(gameTime);
                 }
