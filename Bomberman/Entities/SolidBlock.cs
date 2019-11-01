@@ -7,16 +7,13 @@ using Microsoft.Xna.Framework;
 
 namespace Bomberman.Entities
 {
-    class Bomb : TimedSprite
+    class SolidBlock : Block
     {
-        public Bomb(Rectangle rectangle, TimeSpan gameTime): base("Shared/Images/bomb", rectangle)
-        {
-            this.tiempo = gameTime;
-        }
+        public SolidBlock(Rectangle frames) : base("Shared/Images/block", frames) { }
 
         public override void Update(GameTime gameTime)
         {
-            
+
         }
     }
 }

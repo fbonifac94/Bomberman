@@ -13,7 +13,7 @@
 
 #---------------------------------- Content ---------------------------------#
 
-#begin Shared/Images/bomb.jpg
+#begin Shared/Images/block.jpg
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -23,7 +23,19 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Shared/Images/bomb.jpg
+/build:Shared/Images/block.jpg
+
+#begin Shared/Images/bomb.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Shared/Images/bomb.png
 
 #begin Shared/Images/Bomberman/Down/1.png
 /importer:TextureImporter
@@ -360,6 +372,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Shared/Images/Bomberman/Up/7.png
+
+#begin Shared/Images/fire.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Shared/Images/fire.png
 
 #begin Shared/Images/map.png
 /importer:TextureImporter

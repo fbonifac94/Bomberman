@@ -4,7 +4,8 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/bomb.jpg</File>
+    <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/block.jpg</File>
+    <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/bomb.png</File>
     <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/Bomberman/Down/1.png</File>
     <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/Bomberman/Down/2.png</File>
     <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/Bomberman/Down/3.png</File>
@@ -33,10 +34,13 @@
     <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/Bomberman/Up/5.png</File>
     <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/Bomberman/Up/6.png</File>
     <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/Bomberman/Up/7.png</File>
+    <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/fire.png</File>
     <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/map.png</File>
     <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/transparente.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

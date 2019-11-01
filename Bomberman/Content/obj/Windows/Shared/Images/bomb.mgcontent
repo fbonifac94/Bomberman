@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/bomb.jpg</SourceFile>
-  <SourceTime>2019-10-12T23:28:14.2313257-03:00</SourceTime>
+  <SourceFile>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/bomb.png</SourceFile>
+  <SourceTime>2019-11-01T00:23:39.2028369-03:00</SourceTime>
   <DestFile>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/bin/Windows/Shared/Images/bomb.xnb</DestFile>
-  <DestTime>2019-10-12T23:28:50.7019818-03:00</DestTime>
+  <DestTime>2019-11-01T00:24:50.3779853-03:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T13:35:54-03:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

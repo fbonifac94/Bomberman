@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -20,27 +18,36 @@ namespace Bomberman.Entities
 
         private TimeSpan tiempo;
 
+        private TimeSpan tiempoBomba;
+
         private static int currentImage;
 
         private static Keys currentKey;
 
+        private List<Bomb> bombs;
+
+        private Controllers controller;
+
         public BombermanEntity() { }
 
-        public BombermanEntity(Rectangle rectangle) : base(imageRoute + "Down/1", rectangle)
+        public BombermanEntity(Rectangle rectangle, Controllers controllers) : base(imageRoute + "Down/1", rectangle)
         {
             int speed = 2;
+            this.controller = controllers;
+
             mapKeys = new Dictionary<Keys, int>();
-            mapKeys.Add(Keys.Up, -speed);
-            mapKeys.Add(Keys.Down, speed);
-            mapKeys.Add(Keys.Right, speed);
-            mapKeys.Add(Keys.Left, -speed);
+            mapKeys.Add(controller.getUp(), -speed);
+            mapKeys.Add(controller.getDown(), speed);
+            mapKeys.Add(controller.getRight(), speed);
+            mapKeys.Add(controller.getLeft(), -speed);
 
             imagesXDirections = new Dictionary<Keys, Dictionary<int, Texture2D>>();
-            imagesXDirections.Add(Keys.Up, this.buildImagesRoutes(imageRoute + "Up/"));
-            imagesXDirections.Add(Keys.Down, this.buildImagesRoutes(imageRoute + "Down/"));
-            imagesXDirections.Add(Keys.Left, this.buildImagesRoutes(imageRoute + "Left/"));
-            imagesXDirections.Add(Keys.Right, this.buildImagesRoutes(imageRoute + "Right/"));
+            imagesXDirections.Add(controller.getUp(), this.buildImagesRoutes(imageRoute + "Up/"));
+            imagesXDirections.Add(controller.getDown(), this.buildImagesRoutes(imageRoute + "Down/"));
+            imagesXDirections.Add(controller.getLeft(), this.buildImagesRoutes(imageRoute + "Left/"));
+            imagesXDirections.Add(controller.getRight(), this.buildImagesRoutes(imageRoute + "Right/"));
 
+            this.bombs = new List<Bomb>();
         }
 
         public Dictionary<int, Texture2D> buildImagesRoutes(String route) {
@@ -72,33 +79,36 @@ namespace Bomberman.Entities
 
         public override void Update(GameTime gameTime)
         {
-            if (Keyboard.GetState().IsKeyDown(Keys.Up))
+            if (Keyboard.GetState().IsKeyDown(controller.getUp()))
             {
-                updateImage(gameTime, Keys.Up);
-                this.modifyBombermanPosition(Keys.Up);
+                updateImage(gameTime, controller.getUp());
+                this.modifyBombermanPosition(controller.getUp());
             }
 
-            if (Keyboard.GetState().IsKeyDown(Keys.Down))
+            if (Keyboard.GetState().IsKeyDown(controller.getDown()))
             {
-                updateImage(gameTime, Keys.Down);
-                this.modifyBombermanPosition(Keys.Down);
+                updateImage(gameTime, controller.getDown());
+                this.modifyBombermanPosition(controller.getDown());
             }
 
-            if (Keyboard.GetState().IsKeyDown(Keys.Left))
+            if (Keyboard.GetState().IsKeyDown(controller.getLeft()))
             {
-                updateImage(gameTime, Keys.Left);
-                this.modifyBombermanPosition(Keys.Left);
+                updateImage(gameTime, controller.getLeft());
+                this.modifyBombermanPosition(controller.getLeft());
             }
 
-            if (Keyboard.GetState().IsKeyDown(Keys.Right))
+            if (Keyboard.GetState().IsKeyDown(controller.getRight()))
             {
-                updateImage(gameTime, Keys.Right);
-                this.modifyBombermanPosition(Keys.Right);
+                updateImage(gameTime, controller.getRight());
+                this.modifyBombermanPosition(controller.getRight());
             }
 
-            if (Keyboard.GetState().IsKeyDown(Keys.Space))
+            if (Keyboard.GetState().IsKeyDown(controller.getAction()) && gameTime.TotalGameTime.Subtract(tiempoBomba).Milliseconds > 500)
             {
-                new Bomb(new Rectangle(base.currentFrame.X, base.currentFrame.Y, base.currentFrame.Width, base.currentFrame.Height).);
+                tiempoBomba = gameTime.TotalGameTime;
+
+                Bomb bomb = new Bomb(new Rectangle(base.currentFrame.X, base.currentFrame.Y, base.currentFrame.Width, base.currentFrame.Height), gameTime.TotalGameTime);
+                Background.getInstance().addBombs(bomb);
             }
 
         }
@@ -107,7 +117,7 @@ namespace Bomberman.Entities
         {
             int xPosition = currentFrame.X;
             int yPosition = currentFrame.Y;
-            if (key.Equals(Keys.Up) || key.Equals(Keys.Down))
+            if (key.Equals(controller.getUp()) || key.Equals(controller.getDown()))
             {
                 yPosition += mapKeys[key];
             }

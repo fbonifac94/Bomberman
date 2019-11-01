@@ -1,9 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.Xna.Framework.Input;
 
 namespace Bomberman.Entities
 {
@@ -11,15 +7,13 @@ namespace Bomberman.Entities
     {
         private static BombermanPlayerOne bomberManPlayerOne;
 
-        private BombermanPlayerOne(Rectangle frames): base(frames)
-        {
-        }
+        private BombermanPlayerOne(Rectangle frames): base(frames, new Controllers(Keys.W, Keys.S, Keys.A, Keys.D, Keys.Space)) {}
 
         public static BombermanPlayerOne getInstance()
         {
             if (bomberManPlayerOne == null)
             {
-                BombermanPlayerOne.bomberManPlayerOne = new BombermanPlayerOne(new Rectangle(85, 65, 40, 40) /* BombermanPlayerOne.framesPlayerOne */);
+                BombermanPlayerOne.bomberManPlayerOne = new BombermanPlayerOne(new Rectangle(85, 65, 40, 35));
             }
             return BombermanPlayerOne.bomberManPlayerOne;
         }

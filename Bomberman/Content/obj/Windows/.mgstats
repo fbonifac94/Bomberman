@@ -1,2 +1,2 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/bomb.jpg","C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/bin/Windows/Shared/Images/bomb.xnb","TextureProcessor","Texture2DContent",19033,3109,0,138669
+"C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/block.jpg","C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/bin/Windows/Shared/Images/block.xnb","TextureProcessor","Texture2DContent",18992,3325,0,1346394

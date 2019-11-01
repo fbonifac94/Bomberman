@@ -31,5 +31,10 @@ namespace Bomberman.Entities
         public Boolean intersect(Rectangle sprite) {
             return this.currentFrame.Intersects(sprite);
         }
+
+        public Rectangle getCurrentPosition()
+        {
+            return this.currentFrame;
+        }
     }
 }

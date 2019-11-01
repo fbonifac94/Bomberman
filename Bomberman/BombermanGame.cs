@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System.Collections.Generic;
 
 namespace Bomberman
 {
@@ -13,13 +14,14 @@ namespace Bomberman
         GraphicsDeviceManager graphics;
         public SpriteBatch spriteBatch { get; set; }
         protected static BombermanGame bombermanGame { get; private set; }
-        private BombermanEntity bomberman;
+        private List<BombermanEntity> bombermans;
         private Background background;
 
         private BombermanGame()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            bombermans = new List<BombermanEntity>();
         }
 
         public static BombermanGame getInstance()
@@ -53,7 +55,8 @@ namespace Bomberman
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            bomberman = BombermanPlayerOne.getInstance();
+            bombermans.Add(BombermanPlayerOne.getInstance());
+            bombermans.Add(BombermanPlayerTwo.getInstance());
             background = Background.getInstance();
             // TODO: use this.Content to load your game content here
         }
@@ -77,7 +80,15 @@ namespace Bomberman
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            bomberman.Update(gameTime);
+            for (int i = 0; i < bombermans.Count; i++)
+            {
+                bombermans[i].Update(gameTime);
+                if (background.fireIntersectSomething(bombermans[i].getCurrentPosition()))
+                {
+                    bombermans.RemoveAt(i);
+                }
+            }
+            background.Update(gameTime);
 
             base.Update(gameTime);
         }
@@ -92,8 +103,11 @@ namespace Bomberman
             spriteBatch.Begin();
 
             background.Draw(gameTime);
-            bomberman.Draw(gameTime);
 
+            foreach (BombermanEntity bomberman in bombermans)
+            {
+                bomberman.Draw(gameTime);
+            }
             spriteBatch.End();
 
             base.Draw(gameTime);

@@ -43,12 +43,18 @@
   <ItemGroup>
     <Compile Include="Entities\Background.cs" />
     <Compile Include="Entities\Block.cs" />
+    <Compile Include="Entities\SolidBlock.cs" />
+    <Compile Include="Entities\InvisibleBlock.cs" />
     <Compile Include="Entities\Bomb.cs" />
     <Compile Include="Entities\BombermanEntity.cs" />
     <Compile Include="Entities\BombermanPlayerOne.cs" />
+    <Compile Include="Entities\BombermanPlayerTwo.cs" />
+    <Compile Include="Entities\Controllers.cs" />
+    <Compile Include="Entities\Fire.cs" />
     <Compile Include="Entities\ISprite.cs" />
     <Compile Include="Entities\Sprite.cs" />
     <Compile Include="BombermanGame.cs" />
+    <Compile Include="Entities\TimedSprite.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -60,7 +66,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Shared\Images\bomb.jpg" />
+    <Content Include="Content\Shared\Images\block.jpg" />
+    <Content Include="Content\Shared\Images\bomb.png" />
     <Content Include="Content\Shared\Images\Bomberman\Down\1.png" />
     <Content Include="Content\Shared\Images\Bomberman\Down\2.png" />
     <Content Include="Content\Shared\Images\Bomberman\Down\3.png" />
@@ -89,6 +96,7 @@
     <Content Include="Content\Shared\Images\Bomberman\Up\5.png" />
     <Content Include="Content\Shared\Images\Bomberman\Up\6.png" />
     <Content Include="Content\Shared\Images\Bomberman\Up\7.png" />
+    <Content Include="Content\Shared\Images\fire.png" />
     <Content Include="Content\Shared\Images\map.png" />
     <Content Include="Content\Shared\Images\transparente.png" />
     <Content Include="Icon.ico" />
