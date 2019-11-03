@@ -9,9 +9,9 @@ namespace Bomberman.Entities
     class Background : Sprite
     {
         private static Background background;
-        private static List<InvisibleBlock> invisibleListBlocks;
-        private static List<SolidBlock> solidListBlocks;
-        private static List<Block> listBlocks;
+        private List<InvisibleBlock> invisibleListBlocks;
+        private List<SolidBlock> solidListBlocks;
+        private List<Block> listBlocks;
         private List<Bomb> bombs;
         private List<Fire> fires;
         private static Keys key;
@@ -21,12 +21,12 @@ namespace Bomberman.Entities
         private Background(Rectangle frames) : base("Shared/Images/map", frames) {
             this.bombs = new List<Bomb>();
             this.fires = new List<Fire>();
-            Background.listBlocks = new List<Block>();
+            this.listBlocks = new List<Block>();
         }
 
-        public static Background getInstance()
+        public static Background getInstance(bool requireNewInstance = false)
         {
-            if (Background.background == null)
+            if (Background.background == null || requireNewInstance)
             {
                 Background.background = new Background(new Rectangle(0, 0, BombermanGame.getInstance().GraphicsDevice.Viewport.Width, BombermanGame.getInstance().GraphicsDevice.Viewport.Height));
             }
@@ -50,9 +50,9 @@ namespace Bomberman.Entities
                 if (solidListBlocks[i].intersect(sprite))
                 {
                     solidListBlocks.RemoveAt(i);
-                    Background.listBlocks = new List<Block>();
-                    listBlocks.AddRange(Background.invisibleListBlocks);
-                    listBlocks.AddRange(Background.solidListBlocks);
+                    this.listBlocks = new List<Block>();
+                    listBlocks.AddRange(this.invisibleListBlocks);
+                    listBlocks.AddRange(this.solidListBlocks);
                 }
             }
         }
