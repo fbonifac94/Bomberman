@@ -20,9 +20,9 @@ namespace Bomberman.Entities
 
         private TimeSpan tiempoBomba;
 
-        private static int currentImage;
+        private int currentImage;
 
-        private static Keys currentKey;
+        private Keys currentKey;
 
         private List<Bomb> bombs;
 
@@ -83,13 +83,13 @@ namespace Bomberman.Entities
             if (gameTime.TotalGameTime.Subtract(tiempo).Milliseconds > sleepTime)
             {
 
-                if (!BombermanEntity.currentKey.Equals(key))
+                if (!this.currentKey.Equals(key))
                 {
-                    BombermanEntity.currentKey = key;
-                    BombermanEntity.currentImage = 0;
+                    this.currentKey = key;
+                    this.currentImage = 0;
                 }
-                BombermanEntity.currentImage = (BombermanEntity.currentImage == this.imagesXDirections[key].Count - 1) ? 0 : BombermanEntity.currentImage + 1;
-                base.image = this.imagesXDirections[key][BombermanEntity.currentImage];
+                this.currentImage = (this.currentImage == this.imagesXDirections[key].Count - 1) ? 0 : this.currentImage + 1;
+                base.image = this.imagesXDirections[key][this.currentImage];
             }
         }
 
