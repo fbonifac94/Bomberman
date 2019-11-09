@@ -36,9 +36,11 @@
     <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/Bomberman/Up/7.png</File>
     <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/fire.png</File>
     <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/map.png</File>
+    <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/Score.spritefont</File>
     <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/transparente.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

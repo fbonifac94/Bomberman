@@ -13,6 +13,8 @@ namespace Bomberman
         protected static BombermanGame bombermanGame { get; private set; }
         private List<BombermanEntity> bombermans;
         private Background background;
+        public Dictionary<string, SpriteFont> visualScore { get; private set; }
+        public Dictionary<string, int> scoreByBomberman { get; private set; }
 
         private BombermanGame()
         {
@@ -39,6 +41,14 @@ namespace Bomberman
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
+            visualScore = new Dictionary<string, SpriteFont>();
+            visualScore.Add("Player One", Content.Load<SpriteFont>("Shared/Images/Score"));
+            visualScore.Add("Player Two", Content.Load<SpriteFont>("Shared/Images/Score"));
+
+            scoreByBomberman = new Dictionary<string, int>();
+            scoreByBomberman.Add("Player Two", 0);
+            scoreByBomberman.Add("Player One", 0);
+
             bombermans.Add(BombermanPlayerOne.getInstance());
             bombermans.Add(BombermanPlayerTwo.getInstance());
             background = Background.getInstance();
@@ -60,11 +70,11 @@ namespace Bomberman
                 {
                     if (bombermans[i] is BombermanPlayerOne)
                     {
-
+                        this.scoreByBomberman["Player Two"] += 1;
                     }
                     else
                     {
-
+                        this.scoreByBomberman["Player One"] += 1;
                     }
                     background = Background.getInstance(true);
                     bombermans.Clear();

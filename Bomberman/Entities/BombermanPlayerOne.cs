@@ -7,7 +7,7 @@ namespace Bomberman.Entities
     {
         private static BombermanPlayerOne bomberManPlayerOne;
 
-        private BombermanPlayerOne(Rectangle frames): base(frames, new Controllers(Keys.W, Keys.S, Keys.A, Keys.D, Keys.Space)) {}
+        private BombermanPlayerOne(Rectangle frames): base(new Vector2(25, 8), Color.Red, "Player One", frames, new Controllers(Keys.W, Keys.S, Keys.A, Keys.D, Keys.Space)) {}
 
         public static BombermanPlayerOne getInstance(bool requireNewInstance = false)
         {

@@ -76,3 +76,4 @@ C:\Users\Facundo\source\repos\Bomberman\Bomberman\bin\Windows\x86\Debug\Content\
 C:\Users\Facundo\source\repos\Bomberman\Bomberman\bin\Windows\x86\Debug\Content\Shared\Images\bomb.xnb
 C:\Users\Facundo\source\repos\Bomberman\Bomberman\bin\Windows\x86\Debug\Content\Shared\Images\fire.xnb
 C:\Users\Facundo\source\repos\Bomberman\Bomberman\bin\Windows\x86\Debug\Content\Shared\Images\block.xnb
+C:\Users\Facundo\source\repos\Bomberman\Bomberman\bin\Windows\x86\Debug\Content\Shared\Images\Score.xnb

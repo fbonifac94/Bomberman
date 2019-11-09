@@ -28,13 +28,21 @@ namespace Bomberman.Entities
 
         private Controllers controller;
 
+        private String player;
+
+        private Color scoreColor;
+
+        private Vector2 scorePosition;
+
         public BombermanEntity() { }
 
-        public BombermanEntity(Rectangle rectangle, Controllers controllers) : base(imageRoute + "Down/1", rectangle)
+        public BombermanEntity(Vector2 scorePosition, Color color, String player, Rectangle rectangle, Controllers controllers) : base(imageRoute + "Down/1", rectangle)
         {
             int speed = 2;
             this.controller = controllers;
-
+            this.player = player;
+            this.scoreColor = color;
+            this.scorePosition = scorePosition;
             mapKeys = new Dictionary<Keys, int>();
             mapKeys.Add(controller.getUp(), -speed);
             mapKeys.Add(controller.getDown(), speed);
@@ -132,6 +140,21 @@ namespace Bomberman.Entities
             {
                 currentFrame = newPosc;
             }
+        }
+
+        public override void Draw(GameTime gameTime)
+        {
+            base.Draw(gameTime);
+            this.drawPoints(gameTime, player, this.scoreColor, this.scorePosition);
+        }
+
+        public void drawPoints(GameTime gameTime, String player, Color color, Vector2 vector)
+        {;
+            BombermanGame.getInstance().spriteBatch.DrawString(
+            BombermanGame.getInstance().visualScore[player],
+            player + ": " + BombermanGame.getInstance().scoreByBomberman[player].ToString(),
+            vector,
+            color);
         }
     }
 }

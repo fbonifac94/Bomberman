@@ -1,2 +1,2 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/block.jpg","C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/bin/Windows/Shared/Images/block.xnb","TextureProcessor","Texture2DContent",18992,3325,0,1346394
+"C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/Score.spritefont","C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/bin/Windows/Shared/Images/Score.xnb","FontDescriptionProcessor","SpriteFontContent",2008,21521,0,3111668
