@@ -38,8 +38,12 @@
     <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/map.png</File>
     <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/Score.spritefont</File>
     <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Images/transparente.png</File>
+    <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Sounds/Bomb.wav</File>
+    <File>C:/Users/Facundo/source/repos/Bomberman/Bomberman/Content/Shared/Sounds/EnviromentMusic.mp3</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

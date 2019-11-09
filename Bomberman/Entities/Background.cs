@@ -1,5 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +19,8 @@ namespace Bomberman.Entities
         private static Keys key;
         private bool initializedInvisible;
         private bool initializedSolid;
+        private TimeSpan tiempo;
+        private Boolean initializedEnviromentSound;
 
         private Background(Rectangle frames) : base("Shared/Images/map", frames) {
             this.bombs = new List<Bomb>();
@@ -69,6 +73,7 @@ namespace Bomberman.Entities
                     {
                         Bomb bomb = bombs[i];
                         bombs.RemoveAt(i);
+                        BombermanGame.getInstance().soundsEffects["bomb"].Play();
                         buildFire(bomb, gameTime);
                         return;
                     }
@@ -91,6 +96,13 @@ namespace Bomberman.Entities
         public override void Draw(GameTime gameTime)
         {
             base.Draw(gameTime);
+
+            if (!initializedEnviromentSound || gameTime.TotalGameTime.Subtract(tiempo).Seconds > 19)
+            {
+                MediaPlayer.Play(BombermanGame.getInstance().sounds["enviroment"]);
+                tiempo = gameTime.TotalGameTime;
+                initializedEnviromentSound = true;
+            }            
 
             if (!initializedInvisible) { buildInvisibleBlocks(); }
             if (!initializedSolid) { buildSolidBlocks(); }

@@ -1,7 +1,9 @@
 ﻿using Bomberman.Entities;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
 using System.Collections.Generic;
 
 namespace Bomberman
@@ -15,6 +17,8 @@ namespace Bomberman
         private Background background;
         public Dictionary<string, SpriteFont> visualScore { get; private set; }
         public Dictionary<string, int> scoreByBomberman { get; private set; }
+        public Dictionary<string, Song> sounds{ get; private set; }
+        public Dictionary<string, SoundEffect> soundsEffects { get; private set; }
 
         private BombermanGame()
         {
@@ -44,6 +48,12 @@ namespace Bomberman
             visualScore = new Dictionary<string, SpriteFont>();
             visualScore.Add("Player One", Content.Load<SpriteFont>("Shared/Images/Score"));
             visualScore.Add("Player Two", Content.Load<SpriteFont>("Shared/Images/Score"));
+
+            sounds = new Dictionary<string, Song>();
+            sounds.Add("enviroment", Content.Load<Song>("Shared/Sounds/EnviromentMusic"));
+
+            soundsEffects = new Dictionary<string, SoundEffect>();
+            soundsEffects.Add("bomb", Content.Load<SoundEffect>("Shared/Sounds/Bomb"));
 
             scoreByBomberman = new Dictionary<string, int>();
             scoreByBomberman.Add("Player Two", 0);

@@ -99,6 +99,8 @@
     <Content Include="Content\Shared\Images\fire.png" />
     <Content Include="Content\Shared\Images\map.png" />
     <Content Include="Content\Shared\Images\transparente.png" />
+    <Content Include="Content\Shared\Sounds\Bomb.wav" />
+    <Content Include="Content\Shared\Sounds\EnviromentMusic.mp3" />
     <Content Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>

@@ -34,6 +34,8 @@ namespace Bomberman.Entities
 
         private Vector2 scorePosition;
 
+        List<Keys> allKeys;
+
         public BombermanEntity() { }
 
         public BombermanEntity(Vector2 scorePosition, Color color, String player, Rectangle rectangle, Controllers controllers) : base(imageRoute + "Down/1", rectangle)
@@ -48,6 +50,12 @@ namespace Bomberman.Entities
             mapKeys.Add(controller.getDown(), speed);
             mapKeys.Add(controller.getRight(), speed);
             mapKeys.Add(controller.getLeft(), -speed);
+
+            allKeys = new List<Keys>();
+            allKeys.Add(controller.getUp());
+            allKeys.Add(controller.getDown());
+            allKeys.Add(controller.getLeft());
+            allKeys.Add(controller.getRight());
 
             imagesXDirections = new Dictionary<Keys, Dictionary<int, Texture2D>>();
             imagesXDirections.Add(controller.getUp(), this.buildImagesRoutes(imageRoute + "Up/"));
@@ -87,25 +95,25 @@ namespace Bomberman.Entities
 
         public override void Update(GameTime gameTime)
         {
-            if (Keyboard.GetState().IsKeyDown(controller.getUp()))
+            if (this.isKeyDownAndNot(controller.getUp()))
             {
                 updateImage(gameTime, controller.getUp());
                 this.modifyBombermanPosition(controller.getUp());
             }
 
-            if (Keyboard.GetState().IsKeyDown(controller.getDown()))
+            if (this.isKeyDownAndNot(controller.getDown()))
             {
                 updateImage(gameTime, controller.getDown());
                 this.modifyBombermanPosition(controller.getDown());
             }
 
-            if (Keyboard.GetState().IsKeyDown(controller.getLeft()))
+            if (this.isKeyDownAndNot(controller.getLeft()))
             {
                 updateImage(gameTime, controller.getLeft());
                 this.modifyBombermanPosition(controller.getLeft());
             }
 
-            if (Keyboard.GetState().IsKeyDown(controller.getRight()))
+            if (this.isKeyDownAndNot(controller.getRight()))
             {
                 updateImage(gameTime, controller.getRight());
                 this.modifyBombermanPosition(controller.getRight());
@@ -118,6 +126,13 @@ namespace Bomberman.Entities
                 Bomb bomb = new Bomb(new Rectangle(base.currentFrame.X, base.currentFrame.Y, base.currentFrame.Width, base.currentFrame.Height), gameTime.TotalGameTime);
                 Background.getInstance().addBombs(bomb);
             }
+        }
+
+        private Boolean isKeyDownAndNot(Keys key)
+        {
+            List<Keys> cpyAllKeys = new List<Keys>();
+            allKeys.ForEach(elements => { if (elements != key) { cpyAllKeys.Add(elements); } });
+            return Keyboard.GetState().IsKeyDown(key) && !Keyboard.GetState().IsKeyDown(cpyAllKeys[0]) && !Keyboard.GetState().IsKeyDown(cpyAllKeys[1]) && !Keyboard.GetState().IsKeyDown(cpyAllKeys[2]);
 
         }
 
