@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
+using System;
 using System.Collections.Generic;
 
 namespace Bomberman
@@ -14,11 +15,14 @@ namespace Bomberman
         public SpriteBatch spriteBatch { get; set; }
         protected static BombermanGame bombermanGame { get; private set; }
         private List<BombermanEntity> bombermans;
+        private Enemy enemy;
         private Background background;
         public Dictionary<string, SpriteFont> visualScore { get; private set; }
         public Dictionary<string, int> scoreByBomberman { get; private set; }
         public Dictionary<string, Song> sounds{ get; private set; }
         public Dictionary<string, SoundEffect> soundsEffects { get; private set; }
+
+        public static TimeSpan lastDieTime;
 
         private BombermanGame()
         {
@@ -61,6 +65,7 @@ namespace Bomberman
 
             bombermans.Add(BombermanPlayerOne.getInstance());
             bombermans.Add(BombermanPlayerTwo.getInstance());
+
             background = Background.getInstance();
         }
 
@@ -87,11 +92,25 @@ namespace Bomberman
                         this.scoreByBomberman["Player One"] += 1;
                     }
                     background = Background.getInstance(true);
+                    enemy = null;
                     bombermans.Clear();
                     bombermans.Add(BombermanPlayerOne.getInstance(true));
                     bombermans.Add(BombermanPlayerTwo.getInstance(true));
+                    lastDieTime = gameTime.TotalGameTime;
                 }
             }
+            if (enemy == null)
+            {
+                if (gameTime.TotalGameTime.Subtract(lastDieTime).Seconds > 30)
+                {
+                    enemy = Enemy.getInstance(true);
+                }
+            }
+            else
+            {
+                enemy.Update(gameTime);
+            }
+
             background.Update(gameTime);
 
             base.Update(gameTime);
@@ -107,6 +126,11 @@ namespace Bomberman
             foreach (BombermanEntity bomberman in bombermans)
             {
                 bomberman.Draw(gameTime);
+            }
+
+            if (enemy != null)
+            {
+                enemy.Draw(gameTime);
             }
             spriteBatch.End();
 

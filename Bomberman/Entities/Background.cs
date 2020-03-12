@@ -21,11 +21,15 @@ namespace Bomberman.Entities
         private bool initializedSolid;
         private TimeSpan tiempo;
         private Boolean initializedEnviromentSound;
+        public List<Bonus> bonus;
 
         private Background(Rectangle frames) : base("Shared/Images/map", frames) {
             this.bombs = new List<Bomb>();
             this.fires = new List<Fire>();
             this.listBlocks = new List<Block>();
+            this.invisibleListBlocks = new List<InvisibleBlock>();
+            this.solidListBlocks = new List<SolidBlock>();
+            this.bonus = new List<Bonus>();
         }
 
         public static Background getInstance(bool requireNewInstance = false)
@@ -37,6 +41,19 @@ namespace Bomberman.Entities
             return Background.background;
         }
 
+        public Boolean intersectBonus(Rectangle sprite)
+        {
+            for (int i = 0; i < bonus.Count; i++)
+            {
+                if (bonus[i].intersect(sprite))
+                {
+                    bonus.Remove(bonus[i]);
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public Boolean intersectBlocks(Rectangle sprite)
         {
             return listBlocks.Count(elem => elem.intersect(sprite)) > 0;
@@ -45,6 +62,16 @@ namespace Bomberman.Entities
         public Boolean intersectInvisibleBlocks(Rectangle sprite)
         {
             return invisibleListBlocks.Count(elem => elem.intersect(sprite)) > 0;
+        }
+
+        public Boolean intersectSolidBlocks(Rectangle sprite)
+        {
+            return solidListBlocks.Count(elem => elem.intersect(sprite)) > 0;
+        }
+
+        public Boolean intersectBombs(Rectangle sprite)
+        {
+            return bombs.Count(elem => elem.intersect(sprite)) > 0;
         }
 
         public void destroySolidBlocks(Rectangle sprite)
@@ -91,6 +118,8 @@ namespace Bomberman.Entities
                     }
                 }
             }
+
+            BonusFactory.getInstance().generateBonus(gameTime);
         }
 
         public override void Draw(GameTime gameTime)
@@ -120,11 +149,17 @@ namespace Bomberman.Entities
             {
                 fire.Draw(gameTime);
             }
+
+            foreach (Bonus bonus in bonus)
+            {
+                bonus.Draw(gameTime);
+            }
+
+            BonusFactory.getInstance().generateBonus(gameTime);
         }
 
         private void buildSolidBlocks()
         {
-            solidListBlocks = new List<SolidBlock>();
             solidListBlocks.Add(new SolidBlock(new Rectangle(85, 103, 52, 35)));
             solidListBlocks.Add(new SolidBlock(new Rectangle(85, 139, 52, 40)));
             solidListBlocks.Add(new SolidBlock(new Rectangle(255, 65, 52, 36)));
@@ -170,7 +205,6 @@ namespace Bomberman.Entities
 
         private void buildInvisibleBlocks()
         {
-            invisibleListBlocks = new List<InvisibleBlock>();
             invisibleListBlocks.Add(new InvisibleBlock(new Rectangle(20, 20, 750, 40)));
             invisibleListBlocks.Add(new InvisibleBlock(new Rectangle(20, 420, 750, 40)));
             invisibleListBlocks.Add(new InvisibleBlock(new Rectangle(20, 62, 60, 358)));

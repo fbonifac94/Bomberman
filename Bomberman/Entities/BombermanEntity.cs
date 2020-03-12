@@ -58,22 +58,12 @@ namespace Bomberman.Entities
             allKeys.Add(controller.getRight());
 
             imagesXDirections = new Dictionary<Keys, Dictionary<int, Texture2D>>();
-            imagesXDirections.Add(controller.getUp(), this.buildImagesRoutes(imageRoute + "Up/"));
-            imagesXDirections.Add(controller.getDown(), this.buildImagesRoutes(imageRoute + "Down/"));
-            imagesXDirections.Add(controller.getLeft(), this.buildImagesRoutes(imageRoute + "Left/"));
-            imagesXDirections.Add(controller.getRight(), this.buildImagesRoutes(imageRoute + "Right/"));
+            imagesXDirections.Add(controller.getUp(), base.buildImagesRoutes(imageRoute + "Up/"));
+            imagesXDirections.Add(controller.getDown(), base.buildImagesRoutes(imageRoute + "Down/"));
+            imagesXDirections.Add(controller.getLeft(), base.buildImagesRoutes(imageRoute + "Left/"));
+            imagesXDirections.Add(controller.getRight(), base.buildImagesRoutes(imageRoute + "Right/"));
 
             this.bombs = new List<Bomb>();
-        }
-
-        public Dictionary<int, Texture2D> buildImagesRoutes(String route) {
-            Dictionary<int, Texture2D> images = new Dictionary<int, Texture2D>();
-            DirectoryInfo filesRoute = new DirectoryInfo("Content/" + route);
-            FileInfo[] files = filesRoute.GetFiles("*");
-            for (int i = 0; i < files.Count(); i++) {
-                images.Add(i, BombermanGame.getInstance().Content.Load<Texture2D>(route + files[i].Name.Replace(".xnb", "")));
-            }
-            return images;
         }
 
         private void updateImage(GameTime gameTime, Keys key)
@@ -125,6 +115,11 @@ namespace Bomberman.Entities
 
                 Bomb bomb = new Bomb(new Rectangle(base.currentFrame.X, base.currentFrame.Y, base.currentFrame.Width, base.currentFrame.Height), gameTime.TotalGameTime);
                 Background.getInstance().addBombs(bomb);
+            }
+
+            if (Background.getInstance().intersectBonus(this.currentFrame))
+            {
+                BombermanGame.getInstance().scoreByBomberman[player] += 1;
             }
         }
 
