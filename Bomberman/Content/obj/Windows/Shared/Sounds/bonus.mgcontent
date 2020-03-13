@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/Facundo/Desktop/Bomberman/Bomberman/Content/Shared/Sounds/Bomb.wav</SourceFile>
-  <SourceTime>2020-03-13T10:36:59.5266206-03:00</SourceTime>
-  <DestFile>C:/Users/Facundo/Desktop/Bomberman/Bomberman/Content/bin/Windows/Shared/Sounds/Bomb.xnb</DestFile>
-  <DestTime>2020-03-13T11:03:03.3738402-03:00</DestTime>
+  <SourceFile>C:/Users/Facundo/Desktop/Bomberman/Bomberman/Content/Shared/Sounds/bonus.wav</SourceFile>
+  <SourceTime>2020-03-13T10:58:43.9743134-03:00</SourceTime>
+  <DestFile>C:/Users/Facundo/Desktop/Bomberman/Bomberman/Content/bin/Windows/Shared/Sounds/bonus.xnb</DestFile>
+  <DestTime>2020-03-13T11:03:04.03684-03:00</DestTime>
   <Importer>WavImporter</Importer>
   <ImporterTime>2018-12-08T13:35:54-03:00</ImporterTime>
   <Processor>SoundEffectProcessor</Processor>

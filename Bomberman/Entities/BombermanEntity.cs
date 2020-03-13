@@ -119,6 +119,7 @@ namespace Bomberman.Entities
 
             if (Background.getInstance().intersectBonus(this.currentFrame))
             {
+                BombermanGame.getInstance().soundsEffects["bonus"].Play();
                 BombermanGame.getInstance().scoreByBomberman[player] += 1;
             }
         }

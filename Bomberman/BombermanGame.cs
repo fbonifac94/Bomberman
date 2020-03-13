@@ -58,6 +58,7 @@ namespace Bomberman
 
             soundsEffects = new Dictionary<string, SoundEffect>();
             soundsEffects.Add("bomb", Content.Load<SoundEffect>("Shared/Sounds/Bomb"));
+            soundsEffects.Add("bonus", Content.Load<SoundEffect>("Shared/Sounds/bonus"));
 
             scoreByBomberman = new Dictionary<string, int>();
             scoreByBomberman.Add("Player Two", 0);
