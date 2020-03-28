@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace Bomberman
 {
@@ -77,7 +78,13 @@ namespace Bomberman
         protected override void Update(GameTime gameTime)
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+            {
                 Exit();
+                String path = "./../../../../Scores.txt";
+                TextWriter tw = new StreamWriter(path, true);
+                tw.WriteLine("Player 1: " + scoreByBomberman["Player One"] + "/ Player 2: " + scoreByBomberman["Player Two"]);
+                tw.Close();
+            }
 
             for (int i = 0; i < bombermans.Count; i++)
             {
